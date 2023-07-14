@@ -1,0 +1,61 @@
+.WrapperProducts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: fit-content;
+
+  display: flex;
+
+  color: black;
+
+  width: 100%;
+
+  .backgroundList {
+    display: flex;
+    padding: 40px 20px;
+    background-color: rgb(226, 226, 226);
+    color: aliceblue;
+    width: 100%;
+
+    .listProducts {
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px 30px;
+    }
+
+    .Product {
+      scroll-snap-align: start;
+      height: 220px;
+      width: 180px;
+      border-radius: 10px;
+      border: 1px solid gray;
+      -webkit-box-shadow: 5px 5px 10px -1px #000000;
+      box-shadow: 5px 5px 10px -1px #000000;
+      cursor: pointer;
+
+      &:hover {
+        scale: 1.1;
+        box-shadow: 1px 1px 20px -1px #00000000;
+      }
+
+      .images {
+        height: 220px;
+        width: 180px;
+
+        & img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
