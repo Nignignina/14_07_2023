@@ -5,19 +5,6 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import { useEffect } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
-export const AuthContext = createContext({
-  user: {
-    name: "Gino",
-    age: 33,
-    id: 1,
-  },
-  cartlist: [
-    { id: 1, nproducts: 23 },
-    { id: 2, nproducts: 44 },
-  ],
-});
-
 export default function Home() {
   // useEffect(() => {
   //   fetch(`api/hello`, { method: "GET" })

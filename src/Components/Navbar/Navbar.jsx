@@ -1,25 +1,24 @@
 import styles from "./Navbar.module.scss";
 import { AiTwotoneHome } from "react-icons/ai";
 import Link from "next/link";
-import { AuthContext } from "@/pages";
-import { useContext, useState } from "react";
-import { useReducer } from "react";
+import { AuthContext } from "@/pages/_app";
+import { useContext } from "react";
+import { useState } from "react";
 
-// const initialArg = {username : ""};
-function reducer(state, action) {}
-
-// const [state, dispatch] = useReducer(reducer, { name: "" });
+// function reducer
 
 const Navbar = () => {
-  const userData = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  const userName = { user } ? user.name : "hola";
+  const [inputText, setInputText] = useState("");
+  console.log(userName);
+  const onHandleChange = (event) => {
+    setInputText(event.target.value);
+  };
 
-  function handleSubmit() {
+  const setnewName = (e) => {
     e.preventDefault();
-    dispatch({ type: "" });
-  }
-
-  // const user [currentUser, setCurrentUser] = useState({showName})
-
+  };
   return (
     <>
       <nav className={styles.Navbar}>
@@ -47,8 +46,13 @@ const Navbar = () => {
             <AiTwotoneHome />
           </Link>
           <Link href="/login"> LOG IN </Link>
-          <form action="">
-            <input type="text" />
+          <form action="" onSubmit={setnewName}>
+            <input
+              type="text"
+              placeholder="possibly a name"
+              value={inputText}
+              onChange={onHandleChange}
+            />
             <input type="submit" />
           </form>
         </div>

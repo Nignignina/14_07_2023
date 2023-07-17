@@ -1,14 +1,10 @@
 import { useContext } from "react";
-import { AuthContext } from ".";
-
+import { AuthContext } from "./_app";
 export default function login() {
-  const userData = useContext(AuthContext);
-  const Username = userData.user.name;
-
-  //   const inputValue =
+  const { user } = useContext(AuthContext);
   return (
     <div>
-      ciao {Username}
+      ciao {user.name}
       <label htmlFor="/"> Registrati</label>;
     </div>
   );
